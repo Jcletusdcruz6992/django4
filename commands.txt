@@ -1,4 +1,4 @@
-$ conda create --name myDjangoEnv django
+my$ conda create --name myDjangoEnv django
 $ conda activate myDjangoEnv
 $ conda deactivate
 django-admin startproject first_project
@@ -13,3 +13,7 @@ git push -u origin main
 python manage.py startapp first_app
 from django.conf.urls import include
 from django.conf.urls import urls
+python manage.py migrate
+python manage.py makemigrations AppFour
+python manage.py shell
+python manage.py createsuperuser
