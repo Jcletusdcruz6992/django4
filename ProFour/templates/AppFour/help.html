@@ -1,14 +1,39 @@
 <!DOCTYPE html>
-{%  load static %}
+{% load static %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>James Website</title>
-    <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}"/>
   </head>
   <body>
-    <h1>Waiting for help!</h1>
-    {{insert_here}}
-    <img src="{% static "images/pic.jpg" %}" alt="Sorry,could not load images">
+    <h1>welcome to James Website</h1>
+    <div class="djangotwo">
+      {% if Access_Record %}
+      <table>
+        <thead>
+          <th>Site Name</th>
+          <th>Date Accessed</th>
+        </thead>
+        {% for acc in Access_Record %}
+        <tr>
+          <td>{{acc.name}}</td>
+          <td>{{acc.date}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+{% else %}
+<p>No Access Records Found</p>
+{% endif %}
+    </div>
+    <style media="screen">
+    h1{
+      color: blue;
+    }
+
+    table,th,td{
+      border: 3px solid black;
+    }
+    </style>
   </body>
 </html>
